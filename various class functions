@@ -1,0 +1,219 @@
+CLASS FUNCTIONS ======> constructors, destructors, mutators, accessors, enquiry, facilitators.
+CONSTRUCTOR ====> It is a special member function,used to initialize variables of an object,its automatically called,when object created.
+DESTRUCTOR =====>It is a function,which are executed whenever an object reaches end of the life(destory).
+MUTATORS ====> set values to private variables.
+ACCESSORS ===> accesss private variable values.
+  ENQUIRY ===> Enquiry functions are those that run to find (true /false).
+FACILITATORS ====> facilitator functions are those bascially to do some processing to find ouput.
+
+
+
+
+
+
+
+  INLINE FUNCTION (in class)========> Any function you define within the class scope  are called inline-functions.
+                                     .Any function definition(not prototype & declaration) was wrriten inside class scope are called inline function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          //using constructors, accessors mutators enquiry facilitators
+  
+#include <iostream>
+
+using namespace std;
+class Complex{
+  int real;
+  int img;
+  public:
+  Complex()
+  {
+      real=0;
+      img=0;
+  }
+  Complex(int x,int y)
+  {
+      real=x;
+      img=y;
+  }
+  Complex(const Complex &z)
+  {
+      real=z.real;
+      img=z.img;
+  }
+  void setValues(int ,int);//mutators
+  
+  void display();//Accessors
+  bool isReal();//Enquiry
+  Complex findProduct(Complex);//facilitators
+ 
+};
+
+int main()
+{
+    Complex a,b,c;
+    a.setValues(1,2);
+    b.setValues(3,4);
+    a.display();
+    b.display();
+    c=a.findProduct(b);
+    c.display();
+    cout<<c.isReal()<<endl;
+    return 0;
+}
+void Complex:: setValues(int x ,int y)
+{
+    real=x;
+    img=y;
+} bool Complex::isReal()
+{
+    if(img==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+Complex Complex::findProduct(Complex x)
+{
+    Complex z;
+    z.real=real*x.real-img*x.img;
+    z.img=img*x.real+real*x.img;
+    return z;
+    
+}
+void Complex::display()
+{
+    cout<<real<<" +i"<<img<<endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+class Complex{
+  int real;
+  int img;
+  public:
+  Complex()
+  {
+      real=0;
+      img=0;
+  }
+  Complex(int x,int y)
+  {
+      real=x;
+      img=y;
+  }
+  Complex(const Complex &z)
+  {
+      real=z.real;
+      img=z.img;
+  }
+  void setValues(int ,int);//mutators
+  
+  void display();//Accessors
+  bool isReal();//Enquiry
+  Complex findProduct(Complex);//facilitators
+ 
+};
+
+int main()
+{
+    Complex a;
+    a.setValues(1,2);
+    Complex *b;
+    b=&a;
+    b->display();
+    
+    return 0;
+}
+void Complex:: setValues(int x ,int y)
+{
+    real=x;
+    img=y;
+} bool Complex::isReal()
+{
+    if(img==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+Complex Complex::findProduct(Complex x)
+{
+    Complex z;
+    z.real=real*x.real-img*x.img;
+    z.img=img*x.real+real*x.img;
+    return z;
+    
+}
+void Complex::display()
+{
+    cout<<real<<" +i"<<img<<endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+      
